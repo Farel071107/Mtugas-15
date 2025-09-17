@@ -1,0 +1,202 @@
+/* Warna utama hijau */
+:root {
+    --primary-color: #28a745; /* hijau bootstrap */
+    --primary-hover: #218838;
+    --text-color: #212529;
+    --bg-color: #fff;
+    --bg-navbar: transparent;
+}
+
+/* Dark mode variables */
+body.dark-mode {
+    --primary-color: #71db85; /* hijau terang */
+    --primary-hover: #58c264;
+    --text-color: #f8f9fa;
+    --bg-color: #121212;
+    --bg-navbar: rgba(0,0,0,0.6);
+}
+
+/* Apply variables */
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar transparan dengan border-radius */
+.navbar-transparent {
+    background-color: var(--bg-navbar);
+    transition: background-color 0.3s ease;
+    border-radius: 12px;
+}
+
+/* Navbar brand & links */
+.navbar-transparent .navbar-brand,
+.navbar-transparent .nav-link,
+.navbar-transparent .btn-logout {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.navbar-transparent .nav-link:hover,
+.navbar-transparent .btn-logout:hover,
+.navbar-transparent .navbar-brand:hover {
+    color: var(--primary-hover);
+    text-decoration: none;
+}
+
+/* Button toggle dark mode */
+#toggleThemeBtn {
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 0.25rem 0.75rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+#toggleThemeBtn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Navbar toggler icon */
+.navbar-toggler-icon {
+    filter: brightness(0) invert(0.5);
+}
+
+/* In dark mode, toggler icon lighter */
+body.dark-mode .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* Button link logout styling */
+.btn-logout {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.btn-logout:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* Centered Create/Edit content */
+.center-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Form elements styling */
+.center-content form input[type="text"],
+.center-content form textarea {
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 0.5rem;
+    width: 100%;
+    transition: border-color 0.3s ease;
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.center-content form input[type="text"]:focus,
+.center-content form textarea:focus {
+    outline: none;
+    border-color: var(--primary-hover);
+    box-shadow: 0 0 5px var(--primary-hover);
+}
+
+/* Buttons */
+.center-content form button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.center-content form button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Label color */
+.center-content label {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    background: #28a745 !important;   /* hijau */
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden; /* penting buat ripple */
+    position: relative;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover {
+    background: #218838 !important;
+    transform: scale(1.05);
+}
+
+/* Ripple element */
+.btn-login .ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    background-color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Glassmorphism Navbar */
+.custom-navbar {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease-in-out;
+    border-radius: 0 0 16px 16px;
+}
+
+/* Saat scroll, kasih efek bayangan */
+.custom-navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Smooth hover */
+.navbar .nav-link,
+.btn {
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+    color: #198754 !important;
+    transform: translateY(-2px);
+}
+
+.btn.transition:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}

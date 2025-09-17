@@ -28,7 +28,7 @@ class TaskController extends Controller
             $query->latest(); // default urutan berdasarkan tanggal dibuat
         }
 
-        $tasks = $query->get(); // atau ->paginate(10) jika pakai pagination
+        $tasks = $query->get(); 
 
         return view('tasks.index', compact('tasks'));
     }
@@ -85,7 +85,7 @@ class TaskController extends Controller
     {
         $task = Task::findOrFail($id);
 
-        // Opsional: pastikan hanya user pemilik yang bisa hapus
+       // pastikan hanya user pemilik yang bisa hapus
         if ($task->user_id !== auth()->id()) {
             abort(403, 'Unauthorized action.');
         }

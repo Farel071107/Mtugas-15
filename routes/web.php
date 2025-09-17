@@ -15,5 +15,5 @@ Route::middleware(['auth'])->group(function () {
 })->name('dashboard');
 });
 
-require __DIR__.'/auth.php'; // Jangan hapus kalau pakai breeze
+require __DIR__.'/auth.php'; 
 
